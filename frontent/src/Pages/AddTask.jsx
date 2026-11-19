@@ -16,7 +16,7 @@ export default function AddTask() {
       completed:false
     }
 
-    await axios.post("http://localhost:3000/todo",newTodo)
+    await axios.post("https://webapptodo-production-6101b522.up.railway.app/todo",newTodo)
     navigate("/")
   }
 

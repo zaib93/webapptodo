@@ -7,7 +7,7 @@ export default function AllTask() {
   const [todo,setTodo] = useState([]);
 
   async function fetchTodoData(){
-    const res =  await axios.get("http://localhost:3000/todo");
+    const res =  await axios.get("https://webapptodo-production-6101b522.up.railway.app/todo");
     setTodo(res.data)
   }
 
@@ -17,10 +17,10 @@ export default function AllTask() {
 
   async function handleStatus(id,status){
     if(status==true){
-      await axios.put(`http://localhost:3000/todo/${id}`,{"completed":false})
+      await axios.put(`https://webapptodo-production-6101b522.up.railway.app/todo/${id}`,{"completed":false})
       fetchTodoData()
     }else{
-      await axios.put(`http://localhost:3000/todo/${id}`,{"completed":true})
+      await axios.put(`https://webapptodo-production-6101b522.up.railway.app/todo/${id}`,{"completed":true})
       fetchTodoData()
     }
   }
@@ -28,7 +28,7 @@ export default function AllTask() {
 
   // Delete Api Call
   async function deleteTodo(id){
-    await axios.delete(`http://localhost:3000/todo/${id}`)
+    await axios.delete(`https://webapptodo-production-6101b522.up.railway.app/todo/${id}`)
     fetchTodoData()
   }
 
